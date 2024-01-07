@@ -2,7 +2,6 @@ import hashlib
 import uuid
 import os, sys
 import json
-from datetime import datetime
 
 def generate_sha1(file_path):
     """Generate the SHA-1 hash of a file."""
@@ -19,7 +18,6 @@ def generate_random_uuid():
 def write_metadata_to_json(sha1_hash, random_uuid, file_extension):
     """Write metadata to a JSON file."""
     metadata = {
-        "date": datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3],
         "sha1": sha1_hash,
         "uuid": str(random_uuid),
         "type": file_extension
